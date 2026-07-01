@@ -1,16 +1,29 @@
 /* ==========================================================================
-   1. GLOBAL SETUPS & FONTS
+   1. GLOBAL SETUPS & FONTS (Premium Fonts & Variable System)
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+  --primary-color: #0B1325;
+  --text-main: #1E293B;       /* Deep elegant slate for ultra-readable corporate texture */
+  --text-muted: #475569;      /* Smooth subtext balanced tint */
+  --accent-amber: #D97706;    /* Premium luxury brand accent gold */
+  --accent-emerald: #059669;  /* Trust & growth validation metric color */
+}
+
+html {
+  scroll-behavior: smooth; /* Safe fallback browser scroll spacing */
+}
 
 body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  color: #0B1325; 
+  color: var(--primary-color); 
   font-family: "DM Sans", sans-serif;
   background-color: #ffffff;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 *, *::before, *::after {
@@ -24,7 +37,7 @@ body {
   position: sticky;
   top: 0;
   width: 100%;
-  padding: 20px 40px; 
+  padding: 22px 60px; /* Desktop balance spacing increased */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,34 +50,34 @@ body {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .menu-items {
   display: flex;
-  gap: 22px; /* Premium compact link gaps */
+  gap: 28px; 
 }
 
 .menu-items a, .menu-items button {
   background: transparent; 
   border: none; 
   font-family: "DM Sans", sans-serif;
-  font-size: 0.88rem; 
+  font-size: 0.9rem; 
   font-weight: 500;
-  color: #334155; 
+  color: var(--text-muted); /* Balanced slate text */
   text-decoration: none;
   cursor: pointer;
   text-transform: capitalize;
   transition: color 0.2s ease;
-  padding: 4px 8px;
+  padding: 4px 0;
 }
 
 .menu-items a:hover, .menu-items button:hover {
-  color: #0B1325; 
+  color: var(--primary-color); 
 }
 
 .call-btn {
-  background: #0B1325; 
+  background: var(--primary-color); 
   color: white;
   padding: 12px 28px; 
   border-radius: 9999px; 
@@ -80,10 +93,9 @@ body {
 
 .call-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(11, 19, 37, 0.2);
+  box-shadow: 0 4px 14px rgba(11, 19, 37, 0.15);
 }
 
-/* Hamburger default hidden on desktop screens */
 .menu-toggle {
   display: none;
   background: transparent;
@@ -98,57 +110,60 @@ body {
 .hamburger-line {
   display: block;
   width: 22px; 
-  height: 2px;  
-  background-color: #0B1325; 
+  height: 2px;   
+  background-color: var(--primary-color); 
   border-radius: 9px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
 
 /* ==========================================================================
-   3. HERO SECTION (DESKTOP DEFAULT)
+   3. HERO SECTION (DESKTOP GRID & VISUAL OPTIMIZATION)
    ========================================================================== */
 .hero {
-  min-height: 80vh;
+  min-height: 82vh;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px; /* Reduced to bring left and right contents beautifully together */
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between; 
   padding: 60px 40px; 
-  gap: 40px;
+  gap: 60px; /* Intentional visual spacing between elements */
 }
 
 .hero-left {
-  flex: 1;
-  max-width: 650px;
+  flex: 1.1; /* Gives the text slight priority area */
+  max-width: 620px;
 }
 
 .hero-right {
-  flex: 1;
+  flex: 0.9;
   display: flex;
   justify-content: flex-end; 
 }
 
 .hero-text {
-  font-size: 3.5rem;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 700;
-  line-height: 1.1;
-  color: #0B1325;
-  margin: 0 0 20px 0;
+  font-family: "Lora", serif;
+  font-size: 3.8rem;
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--primary-color);
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
 }
 
-.highlight-text {
-  font-style: italic;
-  color: #D97706; /* Elegant golden-orange */
+.highlight-text, .highlight-text-italic {
+  font-family: "Lora", serif;
+  font-style: italic; 
+  font-weight: 600;
+  color: var(--accent-amber); 
 }
 
 .hero-subtext {
-  font-size: 1.1rem;
-  color: #475569;
-  line-height: 1.6;
-  margin-bottom: 30px;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 36px;
 }
 
 /* --- HERO CTA DUAL BUTTONS --- */
@@ -159,7 +174,7 @@ body {
 }
 
 .explore-btn {
-  background: #0B1325;
+  background: var(--primary-color);
   color: white;
   padding: 14px 28px;
   border: none;
@@ -167,7 +182,7 @@ body {
   font-family: "DM Sans", sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  cursor: pointer;
+  cursor: pointer; /* Fixes missing action hand indicator for buttons */
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -176,16 +191,17 @@ body {
 
 .mentor-btn {
   background: #F59E0B; 
-  color: #0B1325;
+  color: var(--primary-color);
   padding: 14px 28px;
   border: none;
   border-radius: 9999px;
   font-family: "DM Sans", sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  text-decoration: none;
+  cursor: pointer; 
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   transition: transform 0.2s ease;
 }
 
@@ -193,41 +209,41 @@ body {
   transform: translateY(-2px);
 }
 
-/* --- RIGHT SIDE: PREMIUM STATS CARD --- */
+/* --- PREMIUM STATS CARD --- */
 .features-glass-card {
   background: linear-gradient(135deg, #0B1325 0%, #1E293B 100%);
   color: white;
-  padding: 40px;
+  padding: 44px 40px;
   border-radius: 28px;
   width: 100%;
-  max-width: 450px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  box-shadow: 0 20px 40px rgba(11, 19, 37, 0.15);
+  gap: 32px;
+  box-shadow: 0 20px 40px rgba(11, 19, 37, 0.12);
 }
 
 .stat-box h3 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   margin: 0;
   font-family: "Instrument Serif", serif;
   color: #FBBF24; 
+  line-height: 1;
 }
 
 .stat-box p {
-  margin: 5px 0 0 0;
+  margin: 6px 0 0 0;
   font-family: "DM Sans", sans-serif;
   color: #94A3B8;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 /* ==========================================================================
-   4. RESPONSIVE MEDIA QUERIES (MOBILE FIXES)
+   4. RESPONSIVE MEDIA QUERIES (MOBILE RE-POLISH)
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Navbar Mobile Tweak */
   .nav {
-    padding: 15px 20px;
+    padding: 16px 24px;
   }
 
   .call-btn {
@@ -238,31 +254,32 @@ body {
     display: flex; 
   }
 
-  /* Mobile Dropdown Menu Drawer Styling */
+  /* Dropdown Menu Mobile */
   .menu-items {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 70px;
-    right: 20px;
+    top: 72px;
+    right: 24px;
     background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    gap: 15px;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    gap: 16px;
     z-index: 999;
+    width: 200px;
   }
 
   .menu-items.show {
     display: flex;
   }
 
-  /* --- HERO AREA ULTIMATE MOBILE PACK --- */
+  /* Mobile Hero Structure layout spacing fixes */
   .hero {
     flex-direction: column; 
     align-items: flex-start;
-    padding: 32px 20px 60px 20px;
-    gap: 40px;
+    padding: 40px 24px 60px 24px;
+    gap: 48px;
     min-height: auto;
   }
 
@@ -271,59 +288,61 @@ body {
   }
 
   .hero-text {
-    font-size: 2.5rem; /* Perfect readable scaling */
-    line-height: 1.15;
-    margin-bottom: 16px;
+    font-size: 2.6rem; /* Clean mobile visibility scale */
+    line-height: 1.18;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
   }
 
   .hero-subtext {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 28px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin-bottom: 32px;
   }
 
-  /* Buttons Alignment Container Fix */
+  /* 🔥 FIXED HERO CTA FOR MOBILE (X-Axis Overflow Fixed) */
   .hero-cta-buttons {
     display: flex;
-    flex-direction: row; /* Horizontal symmetry maintained */
+    flex-direction: column; /* Mobile par buttons ek ke niche ek aayenge */
     gap: 12px;
     width: 100%;
-    justify-content: flex-start;
+    align-items: stretch; /* Buttons container ki full width lenge */
   }
 
-  /* Sleek Button Dimensions for Mobile Rows */
   .explore-btn, .mentor-btn {
-    padding: 12px 16px; 
-    font-size: 0.88rem;  
-    white-space: nowrap; 
+    padding: 14px 24px; 
+    font-size: 0.95rem;   
+    white-space: normal; /* text overflow nahi karega wrap ho jayega */
+    text-align: center;
     justify-content: center;
-    flex: 1; 
-    max-width: 170px; 
+    width: 100%; /* Full component mobile symmetry */
+    max-width: 100%; /* Pura stretch allow karega block layout ke liye */
+    box-sizing: border-box;
   }
 
-  /* Features Card Mobile Alignment */
   .hero-right {
     width: 100%;
     justify-content: center; 
   }
 
+  /* Mobile features box fine-tune */
   .features-glass-card {
-    padding: 30px 24px; 
-    border-radius: 20px; 
-    gap: 24px;
+    padding: 36px 28px; 
+    border-radius: 24px; 
+    gap: 28px;
     background: linear-gradient(135deg, #0B1325 0%, #152238 100%);
-    box-shadow: 0 15px 35px rgba(11, 19, 37, 0.25);
+    box-shadow: 0 15px 35px rgba(11, 19, 37, 0.2);
   }
 
   .stat-box h3 {
-    font-size: 2.2rem; 
+    font-size: 2.3rem; 
   }
 
   .stat-box p {
     font-size: 0.9rem;
   }
 
-  /* Hamburger Interaction (Transform state lines to 'X') */
+  /* Hamburger Interaction Toggle */
   .menu-toggle.open .hamburger-line:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
@@ -342,7 +361,398 @@ body {
    ========================================================================== */
 @media (min-width: 1200px) {
   .hero-text {
-    font-size: 4.8rem;
-    line-height: 1.05;
+    font-size: 4.5rem; 
+    line-height: 1.08;
+  }
+}
+
+
+/* ==========================================================================
+   6. MOBILE-FIRST ULTRA-PREMIUM ABOUT SECTION (Trustee & Geometric Polish)
+   ========================================================================== */
+
+/* DEFAULT MOBILE STYLE: Full Mobile App UI Adaptation (< 768px) */
+.about-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 44px 16px; /* Optimized outer margin for small phone displays */
+  scroll-margin-top: 84px; 
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.about-hero-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-academy-badge {
+  color: var(--accent-emerald);
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(0.7rem, 2.5vw, 0.74rem); /* Fluid sizing for small screens */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.about-main-heading {
+  font-family: "Lora", serif;
+  font-size: clamp(1.75rem, 6.5vw, 2.1rem); 
+  font-weight: 500;
+  line-height: 1.22;
+  color: var(--primary-color);
+  margin: 0 0 14px 0;
+  letter-spacing: -0.02em;
+}
+
+/* 🔥 EDITORIAL DESIGN UPGRADE: Complete dynamic breathing adjustments */
+.about-story-p, .about-philosophy-p {
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(0.92rem, 3.2vw, 1.02rem); /* Dynamic typography flow control */
+  color: var(--text-main); /* Premium deep matte charcoal slate texture */
+  line-height: 1.72; /* High-end magazine spacing for non-monotonous layouts */
+  letter-spacing: -0.01em; /* Letter spacing crunch to remove standard look */
+  margin-bottom: 16px;
+  text-align: justify; /* Geometric box layouts formatting */
+  text-justify: inter-word;
+}
+
+/* 🔥 COUTURE TYPOGRAPHY DETAIL: First line stands out to engage executive reader eye paths */
+.about-story-p::first-line {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* 🔥 AUTOMATIC HIGHLIGHTS VECTOR SYSTEM FOR SPANS IN HTML */
+.premium-highlight {
+  font-weight: 600;
+  color: var(--accent-amber);
+  background: linear-gradient(120deg, rgba(217, 119, 6, 0.07) 0%, rgba(217, 119, 6, 0.01) 100%);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.trust-badge-text {
+  font-weight: 600;
+  color: var(--accent-emerald);
+  border-bottom: 1.5px dashed rgba(5, 150, 105, 0.4);
+  padding-bottom: 1px;
+}
+
+/* Mobile Symmetrical App-Style Counters Row */
+.about-counters-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #E2E8F0;
+  padding-top: 16px;
+}
+
+.counter-stat h3 {
+  font-family: "Lora", serif;
+  font-size: clamp(1.5rem, 5.5vw, 1.75rem);
+  font-weight: 500;
+  color: var(--primary-color);
+  margin: 0 0 2px 0;
+}
+
+.counter-stat p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.75rem;
+  color: #64748B;
+  margin: 0;
+}
+
+.about-premium-img {
+  width: 100%;
+  height: 240px; /* Shrunk height container for full vertical viewports */
+  object-fit: cover;
+  border-radius: 18px; /* Tighter premium curve for phone screens */
+}
+
+/* Lower 4-Card Layout Framework (Mobile default single column) */
+.about-features-grid {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 14px;
+}
+
+.feature-glass-node {
+  background: #F8FAFC;
+  border: 1px solid #F1F5F9;
+  padding: 24px 16px; /* Native App Style Inner Padding */
+  border-radius: 16px; /* Sleek card look matching high-end UI */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.node-icon-box {
+  width: 36px;
+  height: 36px;
+  background: var(--primary-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.feature-glass-node h4 {
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(0.98rem, 3.8vw, 1.08rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 6px 0;
+}
+
+.feature-glass-node p {
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(0.82rem, 3vw, 0.88rem);
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.feature-glass-node:active {
+  transform: scale(0.98) !important;
+  background: #ffffff !important;
+  border-color: #CBD5E1 !important;
+}
+
+
+/* ==========================================================================
+   7. MOBILE-FIRST ULTRA-PREMIUM COURSES SECTION (Symmetrical Fit)
+   ========================================================================== */
+.courses-section {
+  width: 100%;
+  background-color: #F8FAFC;
+  padding: 44px 16px; /* Balanced full container width padding */
+  scroll-margin-top: 84px;
+}
+
+.courses-header {
+  text-align: left;
+  max-width: 100%;
+  margin-bottom: 24px;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 2px 0;
+}
+
+/* Native App Trust-Card Design */
+.course-card {
+  background: #ffffff !important;
+  border: 1px solid #E2E8F0 !important;
+  padding: 24px 16px !important; /* Edge-to-edge look to save side padding space */
+  border-radius: 16px !important; /* Perfect sleek radius match */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 2px 8px rgba(11, 19, 37, 0.01);
+}
+
+.course-badge {
+  color: var(--accent-amber);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.course-title {
+  font-family: "Lora", serif;
+  font-size: clamp(1.2rem, 4.5vw, 1.35rem); /* Perfectly scales down on smaller phones */
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.01em;
+}
+
+.course-desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(0.84rem, 3vw, 0.9rem);
+  color: var(--text-muted);
+  line-height: 1.55; /* Refined breathing for descriptions */
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.subjects-divider {
+  height: 1px;
+  background: #E2E8F0;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 12px;
+}
+
+.subjects-heading {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #64748B;
+  letter-spacing: 0.05em;
+  margin: 0 0 6px 0;
+}
+
+.subjects-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.subject-tag {
+  background: #F1F5F9;
+  color: #1E293B;
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 6px; /* Native button style tag radius */
+  font-weight: 500;
+  border: 1px solid #E2E8F0;
+}
+
+.course-card:active {
+  transform: scale(0.98) !important;
+  border-color: #CBD5E1 !important;
+}
+
+
+/* ==========================================================================
+   8. TABLET SCALING UPGRADE (Media Query: min-width 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .about-section, .courses-section {
+    padding: 80px 40px;
+  }
+
+  .about-container, .courses-container {
+    gap: 56px;
+  }
+
+  .about-main-heading, .courses-header .about-main-heading {
+    font-size: 2.85rem !important;
+  }
+
+  .about-counters-row {
+    gap: 32px;
+    justify-content: flex-start;
+  }
+
+  .about-premium-img {
+    height: 360px;
+  }
+
+  .about-features-grid, .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .course-card {
+    padding: 32px 24px !important;
+    border-radius: 24px !important;
+  }
+  
+  .course-title {
+    font-size: 1.65rem;
+  }
+}
+
+
+/* ==========================================================================
+   9. LAPTOP & DESKTOP LARGE RESOLUTION SCALING (Media Query: min-width 1024px)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .about-section, .courses-section {
+    padding: 120px 60px;
+  }
+
+  .about-container, .courses-container {
+    gap: 80px;
+  }
+
+  .about-hero-block {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .about-left-story {
+    flex: 1.1;
+    max-width: 600px;
+  }
+
+  .about-right-media {
+    flex: 0.9;
+    justify-content: flex-end;
+  }
+
+  .about-main-heading, .courses-header .about-main-heading {
+    font-size: 3.4rem !important;
+  }
+
+  .about-story-p, .about-philosophy-p {
+    font-size: 1.05rem;
+    line-height: 1.76; /* Extended breath vectors on wide resolution viewports */
+  }
+
+  .about-counters-row {
+    gap: 48px;
+    padding-top: 28px;
+  }
+
+  .counter-stat h3 {
+    font-size: 2.4rem;
+  }
+
+  .about-premium-img {
+    height: 420px;
+    border-radius: 36px;
+  }
+
+  .about-features-grid {
+    gap: 24px;
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .course-card {
+    padding: 40px 32px !important;
+  }
+
+  .course-title {
+    font-size: 1.85rem;
+  }
+
+  /* 🔥 DESKTOP HOVER MICRO-LIFT INTERACTIONS */
+  .feature-glass-node:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 16px 32px rgba(11, 19, 37, 0.03) !important;
+    background: #ffffff !important;
+    border-color: #CBD5E1 !important;
+  }
+
+  .course-card:hover {
+    transform: translateY(-8px) !important;
+    border-color: #CBD5E1 !important;
+    box-shadow: 0 20px 30px -5px rgba(11, 19, 37, 0.04), 0 10px 15px -5px rgba(11, 19, 37, 0.02) !important;
+    background: #ffffff !important;
   }
 }

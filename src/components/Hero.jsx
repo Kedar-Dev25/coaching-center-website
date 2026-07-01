@@ -1,11 +1,19 @@
 import "../App.css";
 
 function Hero() {
+  // Smooth scroll handler function
+  const handleScroll = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="hero">
       {/* LEFT COLUMN: TEXT CONTENT */}
       <div className="hero-left">
-        <h1 className="hero-text"> {/* FIX: Iska naam uniform rakha */}
+        <h1 className="hero-text">
           Learn Today, Lead <span className="highlight-text">Tomorrow.</span>
         </h1>
         <p className="hero-subtext">
@@ -13,14 +21,14 @@ function Hero() {
           Leads Academy is where ambition meets excellence.
         </p>
         
-        {/* EMERGENT STYLE DUAL BUTTON CONTAINER */}
+        {/* DUAL BUTTON CONTAINER WITH CLICK HANDLERS */}
         <div className="hero-cta-buttons">
-          <button className="explore-btn">
+          <button onClick={() => handleScroll("courses")} className="explore-btn">
             Explore Courses <span className="arrow">&rarr;</span>
           </button>
-          <a href="#contact" className="mentor-btn">
+          <button onClick={() => handleScroll("contact")} className="mentor-btn">
             Talk to a Mentor
-          </a>
+          </button>
         </div>
       </div>
 
