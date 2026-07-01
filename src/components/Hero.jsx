@@ -1,17 +1,23 @@
+import { useState } from "react";
 import "../App.css";
 
 function Hero() {
-  // Smooth scroll handler function
-  const handleScroll = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+  const [activeTab, setActiveTab] = useState("explore");
+
+  const handleScroll = (sectionId, tabName) => {
+    setActiveTab(tabName);
+    
+    // 350ms delay taaki slide animation smooth dikhe
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 350);
   };
 
   return (
     <section className="hero">
-      {/* LEFT COLUMN: TEXT CONTENT */}
       <div className="hero-left">
         <h1 className="hero-text">
           Learn Today, Lead <span className="highlight-text">Tomorrow.</span>
@@ -21,18 +27,27 @@ function Hero() {
           Leads Academy is where ambition meets excellence.
         </p>
         
-        {/* DUAL BUTTON CONTAINER WITH CLICK HANDLERS */}
-        <div className="hero-cta-buttons">
-          <button onClick={() => handleScroll("courses")} className="explore-btn">
+        {/* 🔥 RESPONSIVE ADAPTIVE SWITCHER */}
+        <div className="premium-capsule-switcher">
+          {/* Slider Pill - Desktop pe left-right chalega, Mobile pe upar-niche */}
+          <div className={`capsule-slider-pill ${activeTab === "mentor" ? "slide-active" : ""}`}></div>
+          
+          <button 
+            onClick={() => handleScroll("courses", "explore")} 
+            className={`capsule-tab-btn ${activeTab === "explore" ? "is-active" : ""}`}
+          >
             Explore Courses <span className="arrow">&rarr;</span>
           </button>
-          <button onClick={() => handleScroll("contact")} className="mentor-btn">
+          
+          <button 
+            onClick={() => handleScroll("contact", "mentor")} 
+            className={`capsule-tab-btn ${activeTab === "mentor" ? "is-active" : ""}`}
+          >
             Talk to a Mentor
           </button>
         </div>
       </div>
 
-      {/* RIGHT COLUMN: STATS CARD */}
       <div className="hero-right">
         <div className="features-glass-card">
           <div className="stat-box">

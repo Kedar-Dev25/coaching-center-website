@@ -117,22 +117,22 @@ body {
 }
 
 /* ==========================================================================
-   3. HERO SECTION (DESKTOP GRID & VISUAL OPTIMIZATION)
+   3. HERO SECTION (DESKTOP DEFAULT - HORIZONTAL FLOW)
    ========================================================================== */
 .hero {
   min-height: 82vh;
   width: 100%;
-  max-width: 1200px; /* Reduced to bring left and right contents beautifully together */
+  max-width: 1200px; 
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between; 
   padding: 60px 40px; 
-  gap: 60px; /* Intentional visual spacing between elements */
+  gap: 60px; 
 }
 
 .hero-left {
-  flex: 1.1; /* Gives the text slight priority area */
+  flex: 1.1; 
   max-width: 620px;
 }
 
@@ -166,47 +166,64 @@ body {
   margin-bottom: 36px;
 }
 
-/* --- HERO CTA DUAL BUTTONS --- */
-.hero-cta-buttons {
-  display: flex;
-  gap: 16px;
+/* PREMIUM TRACK BACKGROUND (Desktop Layout) */
+.premium-capsule-switcher {
+  position: relative;
+  display: inline-flex;
+  background: #F8FAFC; 
+  padding: 6px;
+  border-radius: 9999px;
+  border: 1.5px solid #CBD5E1; 
   align-items: center;
+  z-index: 1;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05); 
 }
 
-.explore-btn {
+/* Desktop Sliding Pill Styling */
+.capsule-slider-pill {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  bottom: 6px;
+  width: calc(50% - 6px);
+  height: calc(100% - 12px);
   background: var(--primary-color);
-  color: white;
-  padding: 14px 28px;
-  border: none;
   border-radius: 9999px;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.35s ease; 
+  z-index: -1;
+  box-shadow: 0 4px 12px rgba(11, 19, 37, 0.2);
+}
+
+/* Desktop right slide transition */
+.capsule-slider-pill.slide-active {
+  transform: translateX(100%);
+  background: #D97706; 
+}
+
+/* Individual Tab Layout buttons */
+.capsule-tab-btn {
+  background: transparent;
+  border: none;
+  padding: 14px 28px;
   font-family: "DM Sans", sans-serif;
   font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer; /* Fixes missing action hand indicator for buttons */
+  font-weight: 600; 
+  color: #334155; 
+  cursor: pointer;
+  border-radius: 9999px;
+  transition: color 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: transform 0.2s ease, background 0.3s ease;
+  white-space: nowrap;
 }
 
-.mentor-btn {
-  background: #F59E0B; 
+.capsule-tab-btn.is-active {
+  color: #ffffff !important; 
+}
+
+.capsule-tab-btn:not(.is-active):hover {
   color: var(--primary-color);
-  padding: 14px 28px;
-  border: none;
-  border-radius: 9999px;
-  font-family: "DM Sans", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer; 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease;
-}
-
-.explore-btn:hover, .mentor-btn:hover {
-  transform: translateY(-2px);
 }
 
 /* --- PREMIUM STATS CARD --- */
@@ -239,7 +256,7 @@ body {
 }
 
 /* ==========================================================================
-   4. RESPONSIVE MEDIA QUERIES (MOBILE RE-POLISH)
+   4. RESPONSIVE MEDIA QUERIES (MOBILE VISUAL SEPARATION FIX)
    ========================================================================== */
 @media (max-width: 768px) {
   .nav {
@@ -254,7 +271,6 @@ body {
     display: flex; 
   }
 
-  /* Dropdown Menu Mobile */
   .menu-items {
     display: none;
     flex-direction: column;
@@ -274,7 +290,6 @@ body {
     display: flex;
   }
 
-  /* Mobile Hero Structure layout spacing fixes */
   .hero {
     flex-direction: column; 
     align-items: flex-start;
@@ -288,10 +303,12 @@ body {
   }
 
   .hero-text {
-    font-size: 2.6rem; /* Clean mobile visibility scale */
+    font-size: 2.6rem; 
     line-height: 1.18;
     margin-bottom: 18px;
+    max-width: 320px;
     letter-spacing: -0.01em;
+    word-break: break-word;
   }
 
   .hero-subtext {
@@ -300,24 +317,66 @@ body {
     margin-bottom: 32px;
   }
 
-  /* 🔥 FIXED HERO CTA FOR MOBILE (X-Axis Overflow Fixed) */
-  .hero-cta-buttons {
+  /* 🔥 MOBILE CAPSULE STRUCTURE WITH HIGH SEPARATION */
+  .premium-capsule-switcher {
     display: flex;
-    flex-direction: column; /* Mobile par buttons ek ke niche ek aayenge */
-    gap: 12px;
-    width: 100%;
-    align-items: stretch; /* Buttons container ki full width lenge */
+    flex-direction: column; 
+    width: 100%; 
+    padding: 6px;
+    border-radius: 20px; 
+    box-sizing: border-box;
+    gap: 4px; 
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
   }
 
-  .explore-btn, .mentor-btn {
-    padding: 14px 24px; 
-    font-size: 0.95rem;   
-    white-space: normal; /* text overflow nahi karega wrap ho jayega */
-    text-align: center;
+  /* Mobile Background Slider Pill (Higher Elevation) */
+  .capsule-slider-pill {
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    width: calc(100% - 12px);
+    height: calc(50% - 8px); 
+    border-radius: 14px;
+    transform: translateY(0);
+    /* Extra soft shadow on active element to create 3D overlap look */
+    box-shadow: 0 8px 16px rgba(11, 19, 37, 0.18); 
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.35s ease;
+  }
+
+  .capsule-slider-pill.slide-active {
+    transform: translateY(100%) translateY(4px); 
+    background: #D97706; 
+  }
+
+  /* Full block text buttons layout symmetry with divider line */
+  .capsule-tab-btn {
+    position: relative; /* Necessary for separator placement */
+    width: 100%; 
+    padding: 16px 12px; 
+    font-size: 0.95rem; 
     justify-content: center;
-    width: 100%; /* Full component mobile symmetry */
-    max-width: 100%; /* Pura stretch allow karega block layout ke liye */
-    box-sizing: border-box;
+    text-align: center;
+    border-radius: 14px;
+    white-space: normal;
+    z-index: 2; /* Content stays on top of pill background */
+  }
+
+  /* 🔥 VISUAL SEPARATOR LINE: Pehle button ke niche dynamic divider */
+  .capsule-tab-btn:first-of-type::after {
+    content: "";
+    position: absolute;
+    bottom: -3px; /* Exact center position between buttons gap */
+    left: 10%;
+    width: 80%; /* Takes center focus, looks highly corporate */
+    height: 1px;
+    background: #E2E8F0; /* Clean sleek partition line */
+    transition: opacity 0.2s ease;
+  }
+
+  /* Jab slider move karega, partition transparent ho jayega smooth transition ke sath */
+  .premium-capsule-switcher:has(.slide-active) .capsule-tab-btn:first-of-type::after {
+    opacity: 0;
   }
 
   .hero-right {
@@ -325,7 +384,6 @@ body {
     justify-content: center; 
   }
 
-  /* Mobile features box fine-tune */
   .features-glass-card {
     padding: 36px 28px; 
     border-radius: 24px; 
@@ -342,7 +400,6 @@ body {
     font-size: 0.9rem;
   }
 
-  /* Hamburger Interaction Toggle */
   .menu-toggle.open .hamburger-line:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
@@ -355,7 +412,6 @@ body {
     transform: translateY(-7px) rotate(-45deg);
   }
 }
-
 /* ==========================================================================
    5. LAPTOP & DESKTOP LARGE RESOLUTION SCALING
    ========================================================================== */
@@ -366,18 +422,24 @@ body {
   }
 }
 
+/* ==========================================================================
+   6. MOBILE-FIRST ULTRA-PREMIUM ABOUT SECTION (Baki rules un-altered below...)
+   ========================================================================== */
+.about-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 44px 16px; 
+  scroll-margin-top: 84px; 
+}
+/* ... rest of the CSS remains untouched ... */
+
 
 /* ==========================================================================
    6. MOBILE-FIRST ULTRA-PREMIUM ABOUT SECTION (Trustee & Geometric Polish)
    ========================================================================== */
 
 /* DEFAULT MOBILE STYLE: Full Mobile App UI Adaptation (< 768px) */
-.about-section {
-  width: 100%;
-  background-color: #ffffff;
-  padding: 44px 16px; /* Optimized outer margin for small phone displays */
-  scroll-margin-top: 84px; 
-}
+
 
 .about-container {
   max-width: 1200px;
