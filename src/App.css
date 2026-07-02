@@ -88,11 +88,18 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  
+  /* ADD THIS: Initial state border */
+  border: 2px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .call-btn:hover {
   transform: translateY(-2px);
+  /* ADD THIS: Border on hover */
+  border-color: var(--primary-color);
+  background: white;
+  color: var(--primary-color);
   box-shadow: 0 4px 14px rgba(11, 19, 37, 0.15);
 }
 
@@ -203,7 +210,7 @@ body {
 /* Individual Tab Layout buttons */
 .capsule-tab-btn {
   background: transparent;
-  border: none;
+  border: 2px solid transparent; /* Yeh line add ki hai */
   padding: 14px 28px;
   font-family: "DM Sans", sans-serif;
   font-size: 0.95rem;
@@ -211,7 +218,7 @@ body {
   color: #334155; 
   cursor: pointer;
   border-radius: 9999px;
-  transition: color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* 'all' transition for border */
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -224,6 +231,7 @@ body {
 
 .capsule-tab-btn:not(.is-active):hover {
   color: var(--primary-color);
+  border-color: #CBD5E1; /* Hover pe halka border dikhega */
 }
 
 /* --- PREMIUM STATS CARD --- */
