@@ -1036,3 +1036,286 @@ body {
     padding: 50px 20px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Global Premium Setup --- */
+:root {
+  --primary-color: #003366;
+  --bg-soft: #f4f7f9;
+  --white: #ffffff;
+  --shadow: 0 10px 25px rgba(0,0,0,0.07);
+}
+
+.gallery-section {
+  padding: 80px 20px;
+  background-color: var(--bg-soft);
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 50px;
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+/* --- Masonry Grid (Desktop/Tablet) --- */
+/* Masonry ke liye column-count best hai, grid nahi */
+.masonry-grid {
+  column-count: 3;
+  column-gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  max-height: 800px;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.8s ease;
+}
+
+.masonry-grid.show-all {
+  max-height: 5000px;
+}
+
+/* YE HAI ASLI MASONRY FIX */
+.gallery-item {
+  margin-bottom: 20px;
+  break-inside: avoid; /* Important: card ko break hone se rokta hai */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: transparent; /* White hata diya taaki bikhra hua na lage */
+  display: inline-block; /* Masonry ke liye best */
+  width: 100%;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  height: auto; /* Image apni height khud lega */
+  transition: transform 0.6s ease;
+}
+
+/* Hover effects */
+@media (min-width: 993px) {
+  .gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  }
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) { 
+  .masonry-grid { column-count: 2; } 
+}
+
+@media (max-width: 600px) {
+  .gallery-section { padding: 40px 15px; }
+  
+  /* Mobile par bhi masonry rakho, bas column 2 ya 1 kar do */
+  .masonry-grid {
+    column-count: 2; /* 2 columns for better masonry feel */
+    column-gap: 12px;
+    max-height: 600px;
+  }
+  
+  .masonry-grid.show-all {
+    max-height: 4000px;
+  }
+
+  .gallery-item {
+    margin-bottom: 12px;
+    border-radius: 12px;
+  }
+}
+
+/* --- Premium Button --- */
+.view-more-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.view-more-btn {
+  padding: 14px 35px;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,51,102,0.3);
+}
+
+.view-more-btn:hover {
+  transform: translateY(-3px);
+  background: #004a94;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-section {
+  padding: 60px 20px;
+  background: #001f3f; 
+  color: white;
+  text-align: center;
+}
+
+.contact-wrapper {
+  max-width: 500px; /* Width kam kar di taaki mobile pe bada na lage */
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 1.8rem; /* Size chhota kiya */
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.contact-sub {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 30px;
+}
+
+/* --- Compact Grid --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile-first: hamesha stacked */
+  gap: 12px; /* Gap kam kiya taaki compact rahe */
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 20px;
+  border-radius: 12px; /* Kam rounded corners zyada premium lagte hain */
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.3s;
+}
+
+.contact-card h3 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+/* Hover effect */
+.contact-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Responsive (Desktop) --- */
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.location-box {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+}.contact-section {
+  padding: 80px 20px;
+  background: #ffffff; /* White background is more premium than dark */
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.contact-sub {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+/* --- No more boxy cards, use 'Sleek Lines' --- */
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee; /* Dabba hata diya, sirf line rakhi */
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: 0.3s;
+}
+
+.contact-card:hover {
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-right: 20px;
+  background: #f0f4f8; /* Soft background for icon */
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.contact-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
