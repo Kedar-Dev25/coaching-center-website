@@ -1048,13 +1048,7 @@ body {
 
 
 
-/* --- Global Premium Setup --- */
-:root {
-  --primary-color: #003366;
-  --bg-soft: #f4f7f9;
-  --white: #ffffff;
-  --shadow: 0 10px 25px rgba(0,0,0,0.07);
-}
+
 
 .gallery-section {
   padding: 80px 20px;
@@ -1152,8 +1146,8 @@ body {
 
 .view-more-btn {
   padding: 14px 35px;
-  background: var(--primary-color);
-  color: var(--white);
+  background: #004a94;
+  color: white;
   border: none;
   border-radius: 30px;
   cursor: pointer;

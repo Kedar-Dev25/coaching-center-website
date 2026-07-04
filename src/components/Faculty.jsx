@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../App.css';
-import directorImg from '../assets/director.jpg';
+import directorImg from '../assets/DirectorImg.jpeg';
 
 function Faculty() {
   const [activeTab, setActiveTab] = useState('director');
