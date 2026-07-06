@@ -1,30 +1,61 @@
-import React from 'react';
-import '../App.css';
+import React from "react";
+import "../App.css";
 
 const Contact = () => {
   return (
-    <section className="contact-section">
+    <section className="contact-section" id="contact">
       <div className="contact-wrapper">
-        <h2 className="contact-title">Let’s Start the Journey</h2>
-        <p className="contact-sub">Have questions? Our mentors are here to guide you.</p>
+
+        <span className="contact-tag">
+          CONTACT
+        </span>
+
+        <h2 className="contact-title">
+          Let's Start Your Learning Journey
+        </h2>
+
+        <p className="contact-sub">
+          Reach out to our mentors anytime. We're here to answer your questions
+          and guide you toward the right course.
+        </p>
 
         <div className="contact-grid">
+
           <a href="tel:+919840823523" className="contact-card">
-            <span className="icon">📞</span>
-            <h3>Call Us</h3>
-            <p>+91 98408 23523</p>
+
+            <div className="contact-icon">
+              ☎
+            </div>
+
+            <div>
+              <h3>Call Us</h3>
+              <p>+91 98408 23523</p>
+            </div>
+
           </a>
-          
-          <a href="https://wa.me/919840823523" className="contact-card">
-            <span className="icon">💬</span>
-            <h3>WhatsApp</h3>
-            <p>Quick Response</p>
+
+          <a
+            href="https://wa.me/919840823523"
+            className="contact-card"
+          >
+
+            <div className="contact-icon">
+              ✦
+            </div>
+
+            <div>
+              <h3>WhatsApp</h3>
+              <p>Quick Response</p>
+            </div>
+
           </a>
+
         </div>
 
         <div className="location-box">
-          <p>📍 Industrial Estate, Ankuli Main Road, Brahmapur</p>
+          Industrial Estate, Ankuli Main Road, Brahmapur
         </div>
+
       </div>
     </section>
   );
