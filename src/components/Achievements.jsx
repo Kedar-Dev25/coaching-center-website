@@ -5,7 +5,7 @@ import "../App.css";
 
 function Achievements() {
   return (
-    <section className="achievements-section">
+    <section className="achievements-section"id="achievements">
       {/* Header Part */}
 <div className="section-header">
   <span className="overline">- OUR MILESTONES</span>

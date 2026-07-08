@@ -6,7 +6,7 @@ function Faculty() {
   const [activeTab, setActiveTab] = useState('director');
 
   return (
-    <section className="faculty-section">
+    <section className="faculty-section"id="faculty">
       <div className="toggle-wrapper">
         <div className="toggle-container">
           <div className={`active-pill ${activeTab === 'teachers' ? 'slide-right' : ''}`}></div>

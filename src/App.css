@@ -1031,19 +1031,22 @@ body {
 }
 
 .gallery-section {
-  padding: 80px 20px;
+  padding: 50px 20px;
   background-color: var(--bg-soft);
 }
 
 .section-title {
-  text-align: center;
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  margin-bottom: 50px;
-  color: var(--primary-color);
-  font-weight: 700;
-  letter-spacing: -1px;
+  font-family: 'Georgia', serif;
+  font-size: 3.5rem; /* Slightly larger for premium impact */
+  color: #111827;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-align: left;
 }
+.section-title span {
+    color: #d97706;
 
+}
 /* --- Masonry Grid (Desktop/Tablet) --- */
 /* Masonry ke liye column-count best hai, grid nahi */
 .masonry-grid {
@@ -1116,12 +1119,15 @@ body {
     margin-bottom: 12px;
     border-radius: 12px;
   }
+    .section-title{
+      font-size: 2.2rem;
+  }
 }
 
 /* --- Premium Button --- */
 .view-more-container {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .view-more-btn {

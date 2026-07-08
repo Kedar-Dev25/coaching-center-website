@@ -9,9 +9,9 @@ const Gallery = () => {
   }
 
   return (
-    <section className="gallery-section">
-      <h2 className="section-title">Academy Gallery</h2>
-      
+    <section className="gallery-section"id="gallery">
+        <span className="overline">- ACADEMY GALLERY</span>
+      <h2 className="section-title">Life Out of <span>Academy</span></h2>
       {/* showAll true hone par 'show-all' class add hogi */}
       <div className={`masonry-grid ${showAll ? 'show-all' : ''}`}>
         {images.map((src, index) => (
