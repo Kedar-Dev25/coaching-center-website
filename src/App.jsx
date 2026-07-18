@@ -7,6 +7,7 @@ import Achievements from "./components/Achievements";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import MapReviewSection from "./components/MapReviewSection";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Achievements />
       <Gallery />
       <Contact />
+      <MapReviewSection />
       <Footer />
     </>
   );
