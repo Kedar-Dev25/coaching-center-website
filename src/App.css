@@ -1518,3 +1518,7 @@ body {
     justify-content: space-between;
   }
 }
+
+.developer-tag{
+  margin: 40px;
+}
