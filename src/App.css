@@ -1288,19 +1288,55 @@ body {
 
 
 
-
+/* ==========================================================================
+   MAP REVIEW SECTION: PREMIUM HEADINGS & LAYOUT
+   ========================================================================== */
 .map-review-section {
+  width: 100%;
   max-width: 1200px;
-  margin: 80px auto;
+  margin: 60px auto 80px auto;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
+.map-overline {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--accent-emerald);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.map-title {
+  font-family: 'Lora', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--primary-color);
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.map-title span {
+  color: var(--accent-amber);
+}
+
+.map-accent-bar {
+  width: 70px;
+  height: 4px;
+  background: var(--accent-amber);
+  margin-bottom: 36px;
+  border-radius: 2px;
+}
+
+/* Map Frame Glass Card */
 .map-container {
   position: relative; 
   width: 100%;
-  height: 400px; /* Mobile height */
-  border-radius: 24px;
+  height: 360px; /* Mobile height */
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(11, 19, 37, 0.08);
   border: 1px solid #E2E8F0;
@@ -1317,9 +1353,15 @@ body {
   display: block;
 }
 
-@media (min-width: 1024px) {
+/* Responsive Media Query for Laptops & Desktops */
+@media (min-width: 768px) {
+  .map-review-section {
+    margin: 100px auto 120px auto;
+  }
+
   .map-container {
-    height: 500px; /* Desktop pe bada aur clean map */
+    height: 480px;
+    border-radius: 24px;
   }
 }
 
