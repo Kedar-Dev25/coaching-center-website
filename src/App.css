@@ -1472,7 +1472,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
   text-align: center;
   font-size: 0.825rem;
   color: #64748b;
