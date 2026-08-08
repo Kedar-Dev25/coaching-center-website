@@ -1322,3 +1322,157 @@ body {
     height: 500px; /* Desktop pe bada aur clean map */
   }
 }
+
+
+/* Container: Premium Slate Navy for Trust & Elegance */
+.site-footer {
+  width: 100%;
+  background: linear-gradient(180deg, #0f172a 0%, #090d16 100%);
+  color: #94a3b8;
+  padding: 48px 24px 28px;
+  border-top: 3px solid #f59e0b; /* Golden Accent Top Border */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Layout Setup */
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Brand Section */
+.brand-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.01em;
+}
+
+.brand-tagline {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Micro Trust Cards */
+.footer-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1e293b; /* Dark card background */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 18px;
+  border-radius: 14px;
+  flex: 1;
+  min-width: 220px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.highlight-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  transform: translateY(-2px);
+}
+
+.highlight-card .icon {
+  font-size: 1.25rem;
+  background: rgba(245, 158, 11, 0.1);
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlight-title {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.highlight-sub {
+  display: block;
+  font-size: 0.775rem;
+  color: #94a3b8;
+}
+
+/* Divider Line */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+  margin: 36px 0 24px;
+}
+
+/* Bottom Rights & Links */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  font-size: 0.825rem;
+  color: #64748b;
+}
+
+.copyright strong {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.heart {
+  color: #ef4444;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.developer-link {
+  color: #f59e0b; /* Match Golden Theme */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.developer-link:hover {
+  color: #fbbf24;
+  text-decoration: underline;
+}
+
+/* Responsive Desktop Tweaks */
+@media (min-width: 768px) {
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-highlights {
+    flex: initial;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
