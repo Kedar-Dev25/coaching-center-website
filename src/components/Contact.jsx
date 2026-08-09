@@ -13,15 +13,15 @@ const Contact = () => {
         <div className="contact-accent-bar"></div>
 
         <div className="contact-grid">
-          <a href="tel:+919840823523" className="contact-card">
+          <a href="tel:+919040823523" className="contact-card">
             <div className="contact-icon-box">☎</div>
             <div className="contact-info">
               <h3>Call Our Office</h3>
-              <p>+91 98408 23523</p>
+              <p>+91 90408 23523</p>
             </div>
           </a>
 
-          <a href="https://wa.me/919840823523" className="contact-card">
+          <a href="https://wa.me/9040823523" className="contact-card">
             <div className="contact-icon-box">✦</div>
             <div className="contact-info">
               <h3>WhatsApp Us</h3>
