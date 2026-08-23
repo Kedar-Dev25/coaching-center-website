@@ -141,6 +141,7 @@ body {
 .hero-left {
   flex: 1.1; 
   max-width: 620px;
+  text-align: left; /* Explicitly align text to the left */
 }
 
 .hero-right {
@@ -155,7 +156,6 @@ body {
   font-weight: 600;
   line-height: 1.12;
   color: var(--primary-color);
-  margin: 0 0 24px 0;
   letter-spacing: -0.02em;
 }
 
@@ -301,24 +301,28 @@ body {
   .hero {
     flex-direction: column; 
     align-items: flex-start;
-    padding: 40px 24px 60px 24px;
+    padding: 30px 24px 60px 24px;
     gap: 48px;
     min-height: auto;
   }
 
   .hero-left {
     width: 100%;
+    text-align: left; /* Alignment lock */
   }
 
   .hero-text {
     font-size: 2.6rem; 
     line-height: 1.18;
     margin-top: 25px;
+    margin-right: 20%;
     margin-bottom: 18px;
-    max-width: 320px;
+    max-width: 100%; /* ✅ Change 320px to 100% */
     letter-spacing: -0.01em;
     word-break: break-word;
+    text-align: left; /* ✅ Force alignment to left */
   }
+
 
   .hero-subtext {
     font-size: 0.98rem;
@@ -1520,4 +1524,113 @@ body {
 
 .developer-tag{
   margin: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   SMOOTH HORIZONTAL DRIFT BADGE (Mobile-Friendly)
+   ========================================== */
+.admission-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+  padding: 8px 16px !important;
+  border-radius: 99px !important;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.12) !important;
+  margin-bottom: 1.25rem !important;
+  backdrop-filter: blur(10px) !important;
+  width: fit-content !important;
+
+  /* Smooth Left-Right Drift Animation */
+  animation: wallToWallDrift 4s ease-in-out infinite alternate !important;
+  will-change: transform;
+}
+
+@keyframes wallToWallDrift {
+  0% {
+    transform: translateX(0px);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.1);
+  }
+  50% {
+    box-shadow: 0 6px 22px rgba(16, 185, 129, 0.25);
+  }
+  100% {
+    transform: translateX(18px); /* Deewar se takra kar aage jaane ka distance */
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.1);
+  }
+}
+
+/* Glowing Live Radar Dot */
+.live-dot {
+  width: 9px !important;
+  height: 9px !important;
+  background-color: #10B981 !important;
+  border-radius: 50% !important;
+  position: relative !important;
+  display: inline-block !important;
+}
+
+.live-dot::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -3px !important;
+  left: -3px !important;
+  width: 15px !important;
+  height: 15px !important;
+  background-color: rgba(16, 185, 129, 0.45) !important;
+  border-radius: 50% !important;
+  animation: radarWave 2s infinite ease-out !important;
+}
+
+@keyframes radarWave {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.badge-text {
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+
+/* Mobile Alignment & Drift adjustment */
+@media (max-width: 768px) {
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @keyframes wallToWallDrift {
+    0% {
+      transform: translateX(-8px);
+    }
+    100% {
+      transform: translateX(8px);
+    }
+  }
 }

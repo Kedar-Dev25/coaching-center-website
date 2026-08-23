@@ -6,7 +6,7 @@ function Hero() {
 
   const handleScroll = (sectionId, tabName) => {
     setActiveTab(tabName);
-    
+
     // 350ms delay taaki slide animation smooth dikhe
     setTimeout(() => {
       const element = document.getElementById(sectionId);
@@ -19,6 +19,12 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-left">
+        {/* 🔥 LIVE FLOATING ADMISSION BADGE */}
+        <div className="admission-badge">
+          <span className="live-dot"></span>
+          <span className="badge-text">Admissions Open 2026–27</span>
+        </div>
+
         <h1 className="hero-text">
           Learn Today, Lead <span className="highlight-text">Tomorrow.</span>
         </h1>
@@ -26,19 +32,19 @@ function Hero() {
           Personalized coaching, modern teaching methods, and a legacy of toppers — 
           Leads Academy is where ambition meets excellence.
         </p>
-        
+
         {/* 🔥 RESPONSIVE ADAPTIVE SWITCHER */}
         <div className="premium-capsule-switcher">
           {/* Slider Pill - Desktop pe left-right chalega, Mobile pe upar-niche */}
           <div className={`capsule-slider-pill ${activeTab === "mentor" ? "slide-active" : ""}`}></div>
-          
+
           <button 
             onClick={() => handleScroll("courses", "explore")} 
             className={`capsule-tab-btn ${activeTab === "explore" ? "is-active" : ""}`}
           >
             Explore Courses <span className="arrow">&rarr;</span>
           </button>
-          
+
           <button 
             onClick={() => handleScroll("contact", "mentor")} 
             className={`capsule-tab-btn ${activeTab === "mentor" ? "is-active" : ""}`}
