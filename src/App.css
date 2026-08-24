@@ -1762,3 +1762,27 @@ body {
 .courses-section {
   background-color: #0B0F17 !important; /* Deep Obsidian Slate */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}

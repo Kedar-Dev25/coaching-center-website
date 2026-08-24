@@ -8,19 +8,42 @@ import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import MapReviewSection from "./components/MapReviewSection";
+import ScrollReveal from "./components/ScrollReveal";
 
 function App() {
   return (
     <>
       <Navbar />
       <Hero />
-      <About />
-      <Courses />
-      <Faculty />
-      <Achievements />
-      <Gallery />
-      <Contact />
-      <MapReviewSection />
+
+      <ScrollReveal>
+        <About />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Courses />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Faculty />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Achievements />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Gallery />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Contact />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <MapReviewSection />
+      </ScrollReveal>
+
       <Footer />
     </>
   );
