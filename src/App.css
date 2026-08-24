@@ -1634,3 +1634,126 @@ body {
     }
   }
 }
+
+
+/* ==========================================================================
+   UPDATED ULTRA-PREMIUM COURSES CARD STYLING (MATCHING SCREENSHOT AESTHETIC)
+   ========================================================================== */
+
+/* Dark Container Background Update */
+.courses-section {
+  background-color: #0d1b2a !important; /* Deep Premium Dark Blue */
+  color: #ffffff;
+}
+
+.courses-header .about-main-heading {
+  color: #ffffff !important;
+}
+
+.courses-header .about-story-p {
+  color: #94a3b8 !important;
+}
+
+/* Glassmorphic Dark Card Base */
+.course-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px !important;
+  padding: 28px 24px !important;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Header Meta: Top Left Badge + Top Right Action Button */
+.course-badge {
+  color: #38bdf8 !important; /* Tech Light Blue */
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+/* Top Right Action Circle Icon matching screenshot */
+.course-card::after {
+  content: "↗";
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+/* Title & Paragraph Colors */
+.course-title {
+  color: #ffffff !important;
+  font-size: clamp(1.35rem, 4vw, 1.65rem) !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+}
+
+.course-desc {
+  color: #94a3b8 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 24px !important;
+}
+
+/* Divider & Core Subjects Tags */
+.subjects-divider {
+  background: rgba(255, 255, 255, 0.1) !important;
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+.subjects-heading {
+  color: #64748b !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.subjects-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.subject-tag {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #cbd5e1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  font-size: 0.76rem !important;
+  padding: 5px 10px !important;
+  border-radius: 8px !important;
+}
+
+/* Card Hover Interaction (Highlighted First Card Style) */
+.course-card:hover {
+  transform: translateY(-6px) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+.course-card:hover::after {
+  background: #f97316; /* Screenshot Orange Accent Highlight */
+  border-color: #f97316;
+  color: #ffffff;
+  content: "→";
+}
