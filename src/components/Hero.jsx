@@ -26,7 +26,10 @@ function Hero() {
         </div>
 
         <h1 className="hero-text">
-          Learn Today, Lead <span className="highlight-text">Tomorrow.</span>
+          Learn Today, <br className="hero-break" />
+          <span className="lead-tomorrow-group">
+            Lead <span className="highlight-text">Tomorrow.</span>
+          </span>
         </h1>
         <p className="hero-subtext">
           Personalized coaching, modern teaching methods, and a legacy of toppers — 

@@ -312,10 +312,10 @@ body {
   }
 
   .hero-text {
-    font-size: 2.6rem; 
+    font-size: 2.7rem; 
     line-height: 1.18;
     margin-top: 25px;
-    margin-right: 20%;
+    margin-right: 7%;
     margin-bottom: 18px;
     max-width: 100%; /* ✅ Change 320px to 100% */
     letter-spacing: -0.01em;
@@ -1542,7 +1542,7 @@ body {
 
 
 /* ==========================================
-   SMOOTH HORIZONTAL DRIFT BADGE (Mobile-Friendly)
+   SMOOTH HORIZONTAL DRIFT BADGE (Responsive)
    ========================================== */
 .admission-badge {
   display: inline-flex !important;
@@ -1557,11 +1557,12 @@ body {
   backdrop-filter: blur(10px) !important;
   width: fit-content !important;
 
-  /* Smooth Left-Right Drift Animation */
-  animation: wallToWallDrift 4s ease-in-out infinite alternate !important;
+  /* Time 4s se badha kar 6s kar diya hai taaki smooth move kare */
+  animation: wallToWallDrift 6s ease-in-out infinite alternate !important;
   will-change: transform;
 }
 
+/* DESKTOP ANIMATION (Screen ke hisab se move hoga) */
 @keyframes wallToWallDrift {
   0% {
     transform: translateX(0px);
@@ -1571,8 +1572,28 @@ body {
     box-shadow: 0 6px 22px rgba(16, 185, 129, 0.25);
   }
   100% {
-    transform: translateX(18px); /* Deewar se takra kar aage jaane ka distance */
+    /* 25vw matlab screen ki width ka 25% area move karega */
+    transform: translateX(25vw); 
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.1);
+  }
+}
+
+/* MOBILE FIX (Chhoti screen ke liye controlled movement) */
+/* MOBILE FIX (Center se Left & Right dono taraf movement) */
+@media (max-width: 768px) {
+  .admission-badge {
+    animation: mobileDrift 3.5s ease-in-out infinite alternate !important;
+  }
+
+  @keyframes mobileDrift {
+    0% {
+      /* Full Left jaayega */
+      transform: translateX(-40px); 
+    }
+    100% {
+      /* Full Right jaayega */
+      transform: translateX(40px); 
+    }
   }
 }
 
