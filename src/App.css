@@ -37,7 +37,7 @@ body {
   position: sticky;
   top: 0;
   width: 100%;
-  padding: 22px 60px; /* Desktop balance spacing increased */
+  padding: 10px 60px; /* Desktop balance spacing increased */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1786,3 +1786,12 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+
+
+
+
+
+
+
