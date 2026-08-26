@@ -122,7 +122,12 @@ body {
   border-radius: 9px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
-
+/* Mobile menu outside-click overlay */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
 /* ==========================================================================
    3. HERO SECTION (DESKTOP DEFAULT - HORIZONTAL FLOW)
    ========================================================================== */

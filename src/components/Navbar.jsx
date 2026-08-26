@@ -5,7 +5,6 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-
   const menuItems = [
     "about",
     "courses",
@@ -14,14 +13,15 @@ function Navbar() {
     "gallery",
     "contact",
   ];
-  useEffect(() => {
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 50);
-  };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -29,30 +29,41 @@ function Navbar() {
   };
 
   return (
-    <div className={`nav ${scrolled ? "scrolled" : ""}`}>
-    <h3>Leads Academy</h3>
+    <>
+      {/* Close menu when tapping outside */}
+      {open && (
+        <div
+          className="menu-overlay"
+          onClick={() => setOpen(false)}
+        ></div>
+      )}
 
-  <div className={`menu-items ${open ? "show" : ""}`}>
-    {menuItems.map((item) => (
-      <button key={item} onClick={() => scrollToSection(item)}>
-        {item}
-      </button>
-    ))}
-  </div>
+      <div className={`nav ${scrolled ? "scrolled" : ""}`}>
+        <h3>Leads Academy</h3>
 
-<a href="tel:9876543210" className="call-btn">
-  Call Us
-</a>
+        <div className={`menu-items ${open ? "show" : ""}`}>
+          {menuItems.map((item) => (
+            <button key={item} onClick={() => scrollToSection(item)}>
+              {item}
+            </button>
+          ))}
+        </div>
 
-    {/* Purane button ko isse replace kardo */}
-<button className={`menu-toggle ${open ? "open" : ""}`} onClick={() => setOpen(!open)} aria-label="Toggle Menu">
-  <span className="hamburger-line"></span>
-  <span className="hamburger-line"></span>
-  <span className="hamburger-line"></span>
-</button>
-  </div>
+        <a href="tel:9876543210" className="call-btn">
+          Call Us
+        </a>
 
-
+        <button
+          className={`menu-toggle ${open ? "open" : ""}`}
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle Menu"
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+      </div>
+    </>
   );
 }
 
