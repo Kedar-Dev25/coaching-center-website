@@ -24,7 +24,15 @@ const Gallery = () => {
       {/* Button container */}
       <div className="view-more-container">
         <button 
-          onClick={() => setShowAll(!showAll)}
+          onClick={() => {
+            setShowAll(prev => !prev);
+            if (showAll) {
+              document.getElementById('gallery')?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }}
           className="view-more-btn"
         >
           {showAll ? 'Show Less' : 'View All Gallery'}

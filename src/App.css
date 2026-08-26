@@ -1059,10 +1059,16 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   
-  max-height: 800px;
+  max-height: 540px;
   overflow: hidden;
   position: relative;
   transition: max-height 0.8s ease;
+  background:
+  radial-gradient(circle at 10% 15%, rgba(255, 159, 122, 0.45), transparent 32%),
+  radial-gradient(circle at 90% 25%, rgba(244, 114, 182, 0.35), transparent 30%),
+  radial-gradient(circle at 30% 85%, rgba(250, 204, 21, 0.30), transparent 30%),
+  radial-gradient(circle at 85% 90%, rgba(251, 146, 60, 0.35), transparent 30%),
+  #FFF7ED;
 }
 
 .masonry-grid.show-all {
@@ -1112,7 +1118,7 @@ body {
   .masonry-grid {
     column-count: 2; /* 2 columns for better masonry feel */
     column-gap: 12px;
-    max-height: 600px;
+    max-height: 500px;
   }
   
   .masonry-grid.show-all {
@@ -1131,7 +1137,7 @@ body {
 /* --- Premium Button --- */
 .view-more-container {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
 .view-more-btn {
