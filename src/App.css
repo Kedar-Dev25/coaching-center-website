@@ -320,12 +320,13 @@ body {
     font-size: 2.7rem; 
     line-height: 1.18;
     margin-top: 25px;
-    margin-right: 7%;
+    margin-right: 15%;
     margin-bottom: 18px;
     max-width: 100%; /* ✅ Change 320px to 100% */
     letter-spacing: -0.01em;
     word-break: break-word;
     text-align: left; /* ✅ Force alignment to left */
+    white-space: no-wrap;
   }
 
 
