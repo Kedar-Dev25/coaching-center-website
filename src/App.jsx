@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import MapReviewSection from "./components/MapReviewSection";
 import ScrollReveal from "./components/ScrollReveal";
+import MobileCTA from "./components/MobileCTA";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
       </ScrollReveal>
 
       <Footer />
+      <MobileCTA />
     </>
   );
 }

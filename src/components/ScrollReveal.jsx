@@ -12,9 +12,8 @@ function ScrollReveal({ children, className = "" }) {
           observer.unobserve(entry.target);
         }
       },
-      {
-        threshold: 0.15,
-      }
+      // low threshold so tall sections on phones still reveal reliably
+      { threshold: 0.06 }
     );
 
     if (ref.current) {
