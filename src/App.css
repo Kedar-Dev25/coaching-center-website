@@ -1297,9 +1297,21 @@
 }
 
 /* ==========================================================================
-   MAP
+   MAP + REVIEWS
    ========================================================================== */
-.map-review-section { background: #fff; }
+
+.map-review-section {
+  background: #fff;
+}
+
+.map-review-layout {
+  display: grid;
+  gap: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   MAP
+   -------------------------------------------------------------------------- */
 
 .map-container {
   position: relative;
@@ -1320,10 +1332,304 @@
   border: 0;
 }
 
-@media (min-width: 768px) {
-  .map-container { height: 460px; border-radius: var(--r-lg); }
+/* --------------------------------------------------------------------------
+   REVIEWS PANEL
+   -------------------------------------------------------------------------- */
+
+.reviews-panel {
+  min-width: 0;
+  padding: 24px 0 4px;
 }
 
+.reviews-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.reviews-overline {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--primary, #2563eb);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.reviews-heading h3 {
+  margin: 0;
+  color: var(--navy, #0b1325);
+  font-size: 1.45rem;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.reviews-rating {
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: auto;
+  justify-items: end;
+  line-height: 1;
+}
+
+.reviews-rating strong {
+  color: var(--navy, #0b1325);
+  font-size: 1.35rem;
+}
+
+.reviews-rating span {
+  margin-top: 4px;
+  color: #f59e0b;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.reviews-rating small {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 0.65rem;
+}
+
+/* --------------------------------------------------------------------------
+   CAROUSEL
+   -------------------------------------------------------------------------- */
+
+.reviews-carousel-wrap {
+  position: relative;
+  min-width: 0;
+}
+
+.reviews-carousel {
+  display: flex;
+  gap: 14px;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 4px 2px 12px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.reviews-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.review-card {
+  position: relative;
+  flex: 0 0 88%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 205px;
+  padding: 22px;
+  background:
+    linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 18px;
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.07),
+    0 2px 6px rgba(15, 23, 42, 0.03);
+  scroll-snap-align: start;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.review-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 22px;
+  right: 22px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--primary, #2563eb),
+    rgba(37, 99, 235, 0)
+  );
+  border-radius: 0 0 10px 10px;
+}
+
+.review-stars {
+  color: #f59e0b;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.review-card p {
+  margin: 14px 0 22px;
+  color: #334155;
+  font-size: 0.94rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  color: #fff;
+  background: var(--navy, #0b1325);
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.review-author strong {
+  display: block;
+  color: var(--navy, #0b1325);
+  font-size: 0.78rem;
+}
+
+.review-author span {
+  display: block;
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 0.65rem;
+}
+
+/* --------------------------------------------------------------------------
+   ARROWS
+   -------------------------------------------------------------------------- */
+
+.review-nav {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  color: var(--navy, #0b1325);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.review-nav:hover {
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.16);
+}
+
+.review-nav-prev {
+  left: 4px;
+}
+
+.review-nav-next {
+  right: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   DOTS
+   -------------------------------------------------------------------------- */
+
+.review-dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 3px;
+}
+
+.review-dots span {
+  width: 5px;
+  height: 5px;
+  background: #cbd5e1;
+  border-radius: 50%;
+}
+
+.review-dots span:first-child {
+  width: 16px;
+  border-radius: 10px;
+  background: var(--primary, #2563eb);
+}
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (min-width: 640px) {
+  .review-card {
+    flex-basis: 58%;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP
+   ========================================================================== */
+
+@media (min-width: 900px) {
+  .map-review-layout {
+    grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+    align-items: stretch;
+    gap: 28px;
+  }
+
+  .map-container {
+    height: 460px;
+    border-radius: var(--r-lg);
+  }
+
+  .reviews-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    padding: 24px 0;
+  }
+
+  .reviews-heading {
+    margin-bottom: 20px;
+  }
+
+  .reviews-heading h3 {
+    font-size: 1.65rem;
+  }
+
+  .reviews-carousel {
+    gap: 16px;
+    padding: 5px 2px 14px;
+  }
+
+  .review-card {
+    flex-basis: 100%;
+    min-height: 225px;
+    padding: 26px;
+  }
+
+  .review-nav-prev {
+    left: -16px;
+  }
+
+  .review-nav-next {
+    right: -16px;
+  }
+
+  .review-dots {
+    margin-top: 4px;
+  }
+}
 /* ==========================================================================
    FOOTER
    ========================================================================== */
