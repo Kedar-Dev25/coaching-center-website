@@ -867,7 +867,7 @@
    ========================================================================== */
 .faculty-section {
   background: var(--surface, #f8fafc);
-  padding: 64px 0;
+  padding: var(--section-y) max(var(--gutter), calc((100% - var(--max)) / 2));
 }
 
 .toggle-wrapper {
