@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../App.css";
 import Icon from "./Icon";
 import { PHONE_TEL } from "../config";
+import logo from "../assets/logo.jpeg";
 
 const MENU_ITEMS = [
   "about",
@@ -61,9 +62,13 @@ function Navbar() {
 
       <header className={`nav ${scrolled ? "scrolled" : ""}`}>
         <a href="#top" className="brand" onClick={scrollToTop} aria-label="Leads Academy home">
-          <span className="brand-mark">L</span>
-          <span className="brand-name">Leads Academy</span>
-        </a>
+  <img
+    src={logo}
+    alt="Leads Academy"
+    className="brand-logo"
+  />
+  <span className="brand-name">Leads Academy</span>
+</a>
 
         <nav className={`menu-items ${open ? "show" : ""}`} aria-label="Main">
           {MENU_ITEMS.map((item) => (

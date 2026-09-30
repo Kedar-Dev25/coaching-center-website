@@ -1,5 +1,6 @@
 import "../App.css";
 import Icon from "./Icon";
+import logo from "../assets/logo.jpeg";
 
 function Footer() {
   return (
@@ -7,10 +8,14 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-top">
           <div className="footer-brand">
-            <h3 className="brand-logo">
-              <span className="brand-mark">L</span>
-              Leads Academy
-            </h3>
+<h3 className="footer-brand-logo">
+  <img
+    src={logo}
+    alt="Leads Academy"
+    className="footer-logo"
+  />
+  <span>Leads Academy</span>
+</h3>
             <p className="brand-tagline">
               Empowering students with foundation-first learning, structured mentorship, and
               proven results.
